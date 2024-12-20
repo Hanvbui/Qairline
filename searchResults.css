@@ -1,0 +1,278 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #79817c;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f4f7f6; /* Light background color for better contrast */
+}
+
+/* Header */
+.header1 {
+    background-color: #123821;
+    color: white;
+    padding: 16px 24px;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container1 {
+    display: flex;
+    align-items: center;
+}
+
+.logo1 {
+    height: 130px; /* Consistent logo size */
+    margin-right: 16px;
+}
+
+.header-right1 {
+    display: flex;
+    align-items: center;
+}
+
+.header-right1 a {
+    margin-left: 16px;
+    color: #79817c;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right1 a:hover {
+    color: #f8f7f1;
+    text-decoration: underline;
+}
+
+.header-right1 a i {
+    margin-left: 5px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #f8f7f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #123821;
+    font-size: 16px;
+    margin: 0 20px;
+    position: relative;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    color: #a79132;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #123821;
+    color: #f8f7f1;
+    padding: 40px 20px;
+    background-size: 50%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.footer-list {
+    list-style: none;
+    color: #79817c;
+    padding: 0;
+}
+
+.footer-link {
+    color: #79817c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #f8f7f1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: #f8f7f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+.social-link.facebook:hover {
+    color: #3b5998;
+}
+
+.social-link.twitter:hover {
+    color: #1da1f2;
+}
+
+.social-link.instagram:hover {
+    color: #e4405f;
+}
+
+.social-link.linkedin:hover {
+    color: #0077b5;
+}
+
+.footer-bottom {
+    color: #79817c;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#flightResults {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Tiêu đề */
+h2 {
+    font-size: 24px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+/* Các mục chuyến bay */
+div#flightResults > div {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+div#flightResults > div:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Tiêu đề của chuyến bay */
+h3 {
+    font-size: 20px;
+    color: #0056b3;
+    margin: 0 0 10px;
+}
+
+/* Nội dung chuyến bay */
+p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Nút chọn chuyến bay */
+button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #1e7e34;
+}
+
+/* Tin nhắn lỗi */
+p.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Định dạng thân thiện trên thiết bị di động */
+@media screen and (max-width: 600px) {
+    #flightResults {
+        padding: 10px;
+    }
+
+    h2, h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
