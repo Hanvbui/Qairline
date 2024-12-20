@@ -1,0 +1,289 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #79817c;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f4f7f6; /* Light background color for better contrast */
+}
+
+/* Header */
+.header1 {
+    background-color: #123821;
+    color: white;
+    padding: 16px 24px;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container1 {
+    display: flex;
+    align-items: center;
+}
+
+.logo1 {
+    height: 130px; /* Consistent logo size */
+    margin-right: 16px;
+}
+
+.header-right1 {
+    display: flex;
+    align-items: center;
+}
+
+.header-right1 a {
+    margin-left: 16px;
+    color: #79817c;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right1 a:hover {
+    color: #f8f7f1;
+    text-decoration: underline;
+}
+
+.header-right1 a i {
+    margin-left: 5px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #f8f7f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #123821;
+    font-size: 16px;
+    margin: 0 20px;
+    position: relative;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    color: #a79132;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #123821;
+    color: #f8f7f1;
+    padding: 40px 20px;
+    background-size: 50%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.footer-list {
+    list-style: none;
+    color: #79817c;
+    padding: 0;
+}
+
+.footer-link {
+    color: #79817c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #f8f7f1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: #f8f7f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+.social-link.facebook:hover {
+    color: #3b5998;
+}
+
+.social-link.twitter:hover {
+    color: #1da1f2;
+}
+
+.social-link.instagram:hover {
+    color: #e4405f;
+}
+
+.social-link.linkedin:hover {
+    color: #0077b5;
+}
+
+.footer-bottom {
+    color: #79817c;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form Container Styling */
+#passenger-form {
+    max-width: 600px; /* Đảm bảo form không quá rộng */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Radio Button Section */
+#passenger-form div:first-child {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#passenger-form label {
+    font-size: 1rem;
+    color: #34495e;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa radio và text */
+    cursor: pointer;
+}
+
+#passenger-form input[type="radio"] {
+    transform: scale(1.2); /* Tăng kích thước radio button */
+    accent-color: #3498db; /* Màu sắc của radio khi chọn */
+}
+
+/* Passenger List Styling */
+#passenger-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#passenger-list h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Input Fields Styling */
+#passenger-list input[type="text"],
+#passenger-list input[type="email"],
+#passenger-list input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: #2c3e50;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#passenger-list input[type="text"]:focus,
+#passenger-list input[type="email"]:focus,
+#passenger-list input[type="number"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Button Styling */
+#passenger-form button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+#passenger-form button:hover {
+    background-color: #2980b9;
+    transform: scale(1.02);
+}
+
+#passenger-form button:active {
+    transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #passenger-form {
+        padding: 20px;
+    }
+
+    #passenger-form div:first-child {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #passenger-form button {
+        font-size: 1rem;
+    }
+}
