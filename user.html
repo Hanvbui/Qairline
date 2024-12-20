@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chào mừng - Q Airlines</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header1">
+    <div class="container1">
+      <div class="logo-container1">
+        <img alt="Logo Q Airlines" class="logo1" src="images-airplane/logo_icon_final.png" />
+      </div>
+      <div class="header-right1">
+        <a href="logout.html">Đăng xuất</a>
+        <a href="#">Trợ giúp <i class="fas fa-info-circle"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <h2 class="text-xl font-bold mb-4">Xin chào <span id="userName"></span></h2>
+    <div class="user-info">
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>Giới tính:</strong> <span id="userSex"></span></p>
+      <p><strong>Địa chỉ:</strong> <span id="userAddress"></span></p>
+    </div>
+  </main>
+
+  <script>
+    // Lấy thông tin người dùng sau khi đăng nhập thành công
+    document.addEventListener("DOMContentLoaded", function() {
+      // Kiểm tra xem có thông tin người dùng trong sessionStorage không
+      const user = JSON.parse(sessionStorage.getItem("user"));
+
+      if (user) {
+        document.getElementById('userName').textContent = `${user.fname} ${user.lname}`;
+        document.getElementById('userEmail').textContent = user.email;
+        document.getElementById('userSex').textContent = user.sex === 'M' ? 'Nam' : 'Nữ';
+        document.getElementById('userAddress').textContent = user.address;
+      } else {
+        // Nếu không có thông tin người dùng, chuyển hướng về trang đăng nhập
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</body>
+</html>

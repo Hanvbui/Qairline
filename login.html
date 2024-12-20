@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đăng nhập - Q Airlines</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header1">
+    <div class="container1">
+      <div class="logo-container1">
+        <img alt="Logo Q Airlines" class="logo1" src="images-airplane/logo_icon_final.png" />
+      </div>
+      <div class="header-right1">
+        <a href="register.html">Đăng ký</a>
+        <a href="#">Trợ giúp <i class="fas fa-info-circle"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-container">
+    <h2 class="text-xl font-bold mb-4">Đăng nhập</h2>
+    <form id="loginForm">
+      <div class="mb-4">
+        <label for="username" class="block text-gray-700">Tài khoản</label>
+        <input type="text" id="username" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập tài khoản" required />
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-gray-700">Mật khẩu</label>
+        <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập mật khẩu" required />
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">Đăng nhập</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('loginForm').onsubmit = function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Kiểm tra tài khoản để xác định là admin hay người dùng bình thường
+          if (username === 'admin') {
+            // Chuyển hướng tới trang quản trị nếu là admin
+            sessionStorage.setItem('isAdmin', true);  // Lưu trạng thái admin
+            window.location.href = 'admin.html';  // Chuyển hướng
+          } else {
+            // Lưu thông tin người dùng và chuyển hướng tới trang người dùng
+            sessionStorage.setItem('user', JSON.stringify(data.user));
+            window.location.href = 'user.html';
+          }
+          alert('Đăng nhập thành công');
+        } else {
+          alert(data.message || 'Đăng nhập thất bại');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Đã xảy ra lỗi khi đăng nhập');
+      });
+    };
+  </script>
+</body>
+</html>

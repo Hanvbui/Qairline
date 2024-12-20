@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Đăng ký - Q Airlines</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header1">
+    <div class="container1">
+      <div class="logo-container1">
+        <img alt="Logo Q Airlines" class="logo1" src="images-airplane/logo_icon_final.png" />
+      </div>
+      <div class="header-right1">
+        <a href="login.html">Đăng nhập</a>
+        <a href="#">Trợ giúp <i class="fas fa-info-circle"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-container">
+    <h2 class="text-xl font-bold mb-4">Đăng ký</h2>
+    <form id="registerForm">
+      <div class="mb-4">
+        <label for="fname" class="block text-gray-700">Họ</label>
+        <input type="text" id="fname" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập họ" required />
+      </div>
+      <div class="mb-4">
+        <label for="lname" class="block text-gray-700">Tên</label>
+        <input type="text" id="lname" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập tên" required />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700">Email</label>
+        <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập email" required />
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-gray-700">Mật khẩu</label>
+        <input type="password" id="password" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập mật khẩu" required />
+      </div>
+      <div class="mb-4">
+        <label for="confirmPassword" class="block text-gray-700">Xác nhận mật khẩu</label>
+        <input type="password" id="confirmPassword" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập lại mật khẩu" required />
+      </div>
+      <div class="mb-4">
+        <label for="sex" class="block text-gray-700">Giới tính</label>
+        <select id="sex" class="w-full p-2 border border-gray-300 rounded-lg" required>
+          <option value="M">Nam</option>
+          <option value="F">Nữ</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="address" class="block text-gray-700">Địa chỉ</label>
+        <input type="text" id="address" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Nhập địa chỉ" />
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">Đăng ký</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('registerForm').onsubmit = function (event) {
+      event.preventDefault();
+
+      const fname = document.getElementById('fname').value;
+      const lname = document.getElementById('lname').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const sex = document.getElementById('sex').value;  // Lấy giá trị giới tính
+      const address = document.getElementById('address').value;  // Lấy giá trị địa chỉ
+
+      if (password !== confirmPassword) {
+        alert('Mật khẩu và xác nhận mật khẩu không khớp');
+        return;
+      }
+
+      fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fname, lname, email, password, sex, address }), // Gửi thêm sex và address
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          alert('Đăng ký thành công');
+          window.location.href = 'login.html';  // Chuyển hướng về trang đăng nhập sau khi đăng ký thành công
+        } else {
+          alert(data.message || 'Đăng ký thất bại');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Đã xảy ra lỗi khi đăng ký');
+      });
+    };
+  </script>
+</body>
+</html>

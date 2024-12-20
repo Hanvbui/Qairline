@@ -1,0 +1,136 @@
+<div id="flightResults"></div>
+
+<script>
+// Lấy số lượng hành khách từ sessionStorage
+const passengerCount = sessionStorage.getItem('passengerCount');
+if (passengerCount) {
+    console.log(`Số hành khách: ${passengerCount}`);
+}
+
+// Dữ liệu chuyến bay
+const queryParams = new URLSearchParams(window.location.search);
+let flightData = [];
+try {
+    flightData = JSON.parse(decodeURIComponent(queryParams.get('data')) || '[]');
+} catch (error) {
+    console.error('Error parsing flight data:', error);
+}
+
+// Phần tử hiển thị kết quả
+const flightResults = document.getElementById('flightResults');
+
+// Kiểm tra loại chuyến đi từ sessionStorage
+const tripType = sessionStorage.getItem('tripType'); // 'oneWay' hoặc 'roundTrip'
+
+// Hiển thị kết quả theo loại chuyến đi
+if (flightData.error) {
+    flightResults.innerHTML = `<p>Lỗi: ${flightData.error}</p>`;
+} else if (Array.isArray(flightData)) {
+    if (tripType === 'oneWay') {
+        // Hiển thị chuyến bay đi
+        const outboundFlights = flightData.filter(flight => flight.trip_type === 'outbound');
+
+        if (outboundFlights.length > 0) {
+            const outboundTitle = document.createElement('h2');
+            outboundTitle.textContent = 'Chuyến bay đi:';
+            flightResults.appendChild(outboundTitle);
+
+            outboundFlights.forEach((flight, index) => {
+                const flightDiv = document.createElement('div');
+                flightDiv.innerHTML = `
+                  <h3>Chuyến bay ${index + 1}</h3>
+                  <p>Thành phố đi: ${flight.departure_city_name}</p>
+                  <p>Thành phố đến: ${flight.arrival_city_name}</p>
+                  <p>Ngày: ${flight.d_date_time}</p>
+                  <p>Giá: ${flight.price}</p>
+                  <button onclick="selectFlight(${flight.id}, 'outbound')">Chọn chuyến bay</button>
+                `;
+                flightResults.appendChild(flightDiv);
+            });
+        } else {
+            flightResults.innerHTML = '<p>Không tìm thấy chuyến bay nào!</p>';
+        }
+    } else if (tripType === 'roundTrip') {
+        // Hiển thị cả chuyến bay đi và về
+        const outboundFlights = flightData.filter(flight => flight.trip_type === 'outbound');
+        const returnFlights = flightData.filter(flight => flight.trip_type === 'return');
+
+        // Hiển thị chuyến bay đi
+        if (outboundFlights.length > 0) {
+            const outboundTitle = document.createElement('h2');
+            outboundTitle.textContent = 'Chuyến bay đi:';
+            flightResults.appendChild(outboundTitle);
+
+            outboundFlights.forEach((flight, index) => {
+                const flightDiv = document.createElement('div');
+                flightDiv.innerHTML = `
+                  <h3>Chuyến bay ${index + 1}</h3>
+                  <p>Thành phố đi: ${flight.departure_city_name}</p>
+                  <p>Thành phố đến: ${flight.arrival_city_name}</p>
+                  <p>Ngày: ${flight.d_date_time}</p>
+                  <p>Giá: ${flight.price}</p>
+                  <button onclick="selectFlight(${flight.id}, 'outbound')">Chọn chuyến bay</button>
+                `;
+                flightResults.appendChild(flightDiv);
+            });
+        }
+
+        // Hiển thị chuyến bay về
+        if (returnFlights.length > 0) {
+            const returnTitle = document.createElement('h2');
+            returnTitle.textContent = 'Chuyến bay về:';
+            flightResults.appendChild(returnTitle);
+
+            returnFlights.forEach((flight, index) => {
+                const flightDiv = document.createElement('div');
+                flightDiv.innerHTML = `
+                  <h3>Chuyến bay ${index + 1}</h3>
+                  <p>Thành phố đi: ${flight.departure_city_name}</p>
+                  <p>Thành phố đến: ${flight.arrival_city_name}</p>
+                  <p>Ngày: ${flight.d_date_time}</p>
+                  <p>Giá: ${flight.price}</p>
+                  <button onclick="selectFlight(${flight.id}, 'return')">Chọn chuyến bay</button>
+                `;
+                flightResults.appendChild(flightDiv);
+            });
+        }
+
+        if (outboundFlights.length === 0 && returnFlights.length === 0) {
+            flightResults.innerHTML = '<p>Không tìm thấy chuyến bay nào!</p>';
+        }
+    }
+} else {
+    flightResults.innerHTML = '<p>Dữ liệu chuyến bay không hợp lệ!</p>';
+}
+
+function selectFlight(flightId, tripType) {
+    const tripPreference = sessionStorage.getItem('tripType'); // 'oneWay' hoặc 'roundTrip'
+
+    if (tripPreference === 'oneWay') {
+        sessionStorage.setItem('selectedFlight', flightId); // Lưu chuyến bay một chiều
+        console.log('Đã lưu chuyến bay một chiều:', flightId);
+        alert('Chuyến đi đã được chọn.');
+        window.location.href = '/passengerInfo.html'; // Chuyển đến trang thông tin hành khách
+    } else if (tripPreference === 'roundTrip') {
+        if (tripType === 'outbound') {
+            sessionStorage.setItem('outboundFlight', flightId); // Lưu chuyến bay đi
+            console.log('Đã lưu chuyến bay đi:', flightId);
+            alert('Chuyến đi đã được chọn. Vui lòng chọn chuyến về.');
+        } else if (tripType === 'return') {
+            sessionStorage.setItem('returnFlight', flightId); // Lưu chuyến bay về
+            console.log('Đã lưu chuyến bay về:', flightId);
+            alert('Chuyến về đã được chọn.');
+            window.location.href = '/passengerInfo.html'; // Chuyển đến trang thông tin hành khách
+        } else {
+            console.error('Loại chuyến bay không xác định!');
+        }
+    } else {
+        console.error('Loại chuyến đi không xác định trong sessionStorage!');
+    }
+}
+
+
+
+</script>
+
+
