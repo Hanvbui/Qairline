@@ -1,0 +1,323 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #79817c;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f4f7f6; /* Light background color for better contrast */
+}
+
+/* Header */
+.header1 {
+    background-color: #123821;
+    color: white;
+    padding: 16px 24px;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container1 {
+    display: flex;
+    align-items: center;
+}
+
+.logo1 {
+    height: 130px; /* Consistent logo size */
+    margin-right: 16px;
+}
+
+.header-right1 {
+    display: flex;
+    align-items: center;
+}
+
+.header-right1 a {
+    margin-left: 16px;
+    color: #79817c;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header-right1 a:hover {
+    color: #f8f7f1;
+    text-decoration: underline;
+}
+
+.header-right1 a i {
+    margin-left: 5px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #f8f7f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #123821;
+    font-size: 16px;
+    margin: 0 20px;
+    position: relative;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    color: #a79132;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #123821;
+    color: #f8f7f1;
+    padding: 40px 20px;
+    background-size: 50%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.footer-list {
+    list-style: none;
+    color: #79817c;
+    padding: 0;
+}
+
+.footer-link {
+    color: #79817c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #f8f7f1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: #f8f7f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+.social-link.facebook:hover {
+    color: #3b5998;
+}
+
+.social-link.twitter:hover {
+    color: #1da1f2;
+}
+
+.social-link.instagram:hover {
+    color: #e4405f;
+}
+
+.social-link.linkedin:hover {
+    color: #0077b5;
+}
+
+.footer-bottom {
+    color: #79817c;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styling the auth-container */
+.auth-container {
+    max-width: 450px; /* Reduced width for a more compact design */
+    margin: 80px auto;
+    padding: 30px; /* Reduced padding for a cleaner look */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the content */
+    background-color: #fff;
+}
+
+.auth-container h2 {
+    font-size: 1.6rem; /* Slightly smaller heading for a more balanced look */
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px; /* Increased space between heading and form */
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Consistent gap between form fields */
+    width: 100%; /* Ensure the form takes full width of the container */
+}
+
+.mb-4 {
+    margin-bottom: 16px; /* Smaller margin between form fields */
+}
+
+.mb-4 label {
+    font-size: 1rem; /* Adjusted label size for a cleaner look */
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.mb-4 input {
+    width: 100%;
+    padding: 12px; /* Smaller padding for a cleaner look */
+    font-size: 0.95rem; /* Slightly smaller text for inputs */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.mb-4 input:focus {
+    border-color: #3498db; /* Focus effect for better interaction */
+}
+
+.mb-4 select, .mb-4 input[type="radio"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fff;
+}
+
+.mb-4 select:focus, .mb-4 input[type="radio"]:focus {
+    border-color: #3498db;
+}
+
+.auth-container button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+    background-color: #2980b9; /* Darker button color on hover */
+}
+
+/* Small text below form */
+.auth-container .small-text {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .auth-container {
+        width: 90%;
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    .auth-container h2 {
+        font-size: 1.5rem; /* Slightly smaller heading for mobile */
+    }
+
+    .auth-container .small-text {
+        font-size: 0.85rem; /* Adjusted text size for better readability */
+    }
+
+    .mb-4 input {
+        font-size: 0.9rem; /* Slightly smaller text for mobile */
+    }
+}
+
+/* Styling the Gender Select box */
+.mb-4 .gender-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.mb-4 .gender-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.mb-4 .gender-select input[type="radio"] {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.mb-4 .gender-select label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0;
+    display: block;
+}
