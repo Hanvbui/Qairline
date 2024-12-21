@@ -1,0 +1,447 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #79817c;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+  
+  /* Header */
+  .header1 {
+    background-color: #123821;
+    color: white;
+    padding: 16px 24px;
+  }
+  
+  .container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo1 {
+    height: 130px; /* Äiį»u chį»‰nh kĆ­ch thĘ°į»›c logo */
+    margin-right: 16px;
+  }
+  
+  .header-right1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right1 a {
+    margin-left: 16px;
+    color: #79817c;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .header-right1 a:hover {
+    color: #f8f7f1;
+    text-decoration: underline;
+  }
+  
+  .header-right1 a i {
+    margin-left: 5px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #f8f7f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #123821;
+    font-size: 16px;
+    margin: 0 20px;
+    position: relative;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #a79132;
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #f8f7f1;
+    min-width: 160px;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-item {
+    padding: 12px;
+    font-size: 14px;
+    color: #123821;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f7f1;
+  }
+  
+  /* Add icon to dropdown link */
+  .navbar i {
+    margin-left: 5px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      align-items: flex-start;
+    }
+    .navbar a {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Wrapper bao quanh nội dung */
+  .flight-wrapperLB {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Căn các phần tử về phía trên */
+    min-height: 100vh; /* Đảm bảo toàn màn hình */
+    padding: 20px 0; /* Khoảng cách giữa nội dung và khung */
+    background-color: #f4f4f4;
+    box-sizing: border-box; /* Bao gồm padding trong chiều cao */
+  }
+  
+  /* Container nội dung chính */
+  .flight-containerLB {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Đảm bảo nội dung chiếm không gian còn lại */
+  }
+  
+  /* Flight Title */
+  .flight-titleLB {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Flight Card Wrapper */
+  .flight-card-wrapperLB {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Add gap between flight cards */
+    margin-bottom: 40px; /* Add space below the cards */
+  }
+  
+  /* Flight Card */
+  .flight-cardLB {
+    position: relative;
+    width: 23%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flight-cardLB img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Flight Card Content */
+  .flight-card-infoLB {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .flight-card-infoLB h3,
+  .flight-card-infoLB p {
+    margin: 5px 0;
+  }
+  
+  .flight-priceLB {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .flight-detailsLB {
+    font-size: 12px;
+  }
+  
+  /* Flight Badge */
+  .flight-badgeLB {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  /* Responsive Design: For small screens */
+  @media (max-width: 768px) {
+    .flight-cardLB {
+      width: 48%; /* Make the cards take up more space on smaller screens */
+    }
+  
+    .flight-filtersLB {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .flight-filtersLB select,
+    .flight-filtersLB button {
+      margin-bottom: 10px; /* Add spacing between the filters */
+    }
+  }
+  
+  /* CSS cho nút Xem Thêm */
+  .show-more-btnLB {
+    background-color: #a79132;
+    color: #fff; /* Chữ màu trắng */
+    border: none; /* Không có viền */
+    border-radius: 25px; /* Bo góc mềm mại */
+    padding: 12px 30px; /* Kích thước thoải mái cho nút */
+    font-size: 16px; /* Kích thước chữ vừa phải */
+    font-weight: 600; /* Đậm vừa */
+    cursor: pointer; /* Thêm con trỏ chỉ tay khi hover */
+    text-transform: uppercase; /* Chữ in hoa */
+    transition: all 0.3s ease-in-out; /* Hiệu ứng mượt khi hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng cho nút */
+    margin: 20px auto; /* Khoảng cách cân đối, căn giữa */
+    display: block; /* Nút căn giữa */
+  }
+  
+  /* Hiệu ứng hover */
+  .show-more-btnLB:hover {
+    background-color: #937908; /* Màu gold đậm hơn khi hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Tăng bóng khi hover */
+    transform: translateY(-2px); /* Nút nhấc nhẹ khi hover */
+  }
+  
+  /* Hiệu ứng nhấn */
+  .show-more-btnLB:active {
+    background-color: #937908; /* Màu gold tối khi nhấn */
+    transform: translateY(2px); /* Nút nhấn xuống */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Giảm bóng khi nhấn */
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: #123821;
+    color: #f8f7f1;
+    padding: 40px 20px;
+    background-size: 50%; /* Ảnh sẽ bao phủ toàn bộ khung */
+    background-position: bottom; /* Ảnh được căn giữa */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .footer-list {
+    list-style: none;
+    color: #79817c;
+    padding: 0;
+  }
+  
+  .footer-link {
+    color: #79817c;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+    color: #f8f7f1;
+  }
+  
+  /* Social Media Icons */
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-link {
+    font-size: 1.5rem;
+    color: #f8f7f1;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-link:hover {
+    opacity: 0.8;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    color: #79817c;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Modal Overlay (Nền tối) */
+  #KDC-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Nền tối với độ mờ */
+    z-index: 999; /* Đảm bảo overlay nằm dưới modal */
+    display: none;
+  }
+  
+  /* Booking Modal */
+  .KDC-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    max-width: 100%;
+    position: fixed; /* Fixed position để modal luôn ở vị trí cố định */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(
+      -50%,
+      -50%
+    ); /* Điều chỉnh lại vị trí để chính xác căn giữa */
+    z-index: 1000; /* Đảm bảo modal ở trên overlay */
+    display: none; /* Mặc định là ẩn */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến kích thước */
+  }
+  
+  /* Modal Header */
+  .KDC-container h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600; /* Đậm để làm nổi bật tiêu đề */
+  }
+  
+  /* Inputs và Selects trong Modal */
+  .KDC-container select,
+  .KDC-container input {
+    width: calc(100% - 20px); /* Chiều rộng của input và select */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến kích thước */
+  }
+  
+  /* Input và Select trong Modal */
+  .KDC-container .KDC-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Đảm bảo các ô input trong hàng có cùng chiều rộng */
+  .KDC-container .KDC-row input {
+    width: calc(50% - 10px);
+  }
+  
+  /* Chỉnh sửa màu nền cho ô input cuối cùng */
+  .KDC-container .KDC-row input:last-child {
+    background-color: #f8f1e7;
+  }
+  
+  /* Button trong Modal */
+  .KDC-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #a79132;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .KDC-container button:hover {
+    background-color: #937908;
+  }
+  
+  /* Close button trong Modal */
+  .KDC-container .KDC-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  

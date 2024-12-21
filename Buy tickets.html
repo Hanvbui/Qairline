@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QAirline Website</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Buy tickets.css" />
+  </head>
+    <!-- Header -->
+    <header class="header1">
+      <div class="container1">
+        <div class="logo-container1">
+          <a href="index.html">
+          <img
+            alt="Logo Q Airline"
+            class="logo1"
+            src="images-airplane/logo_icon_final.png"
+          />
+          </a>
+        </div>
+        <div class="header-right1">
+          <a href="#">Đăng nhập</a>
+          <a href="#">Đăng ký</a>
+          <a href="#">Trợ giúp <i class="fas fa-info-circle"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="dropdown">
+        <a href="#">Chuyến bay <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="arrival-destinations.html" class="dropdown-item">Điểm đến</a>
+          <a href="Flight schedule.html" class="dropdown-item">Lịch bay</a>
+          <a href="Offers.html" class="dropdown-item">Ưu đãi</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Thông tin hành trình <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="Check-in.html" class="dropdown-item">Check-in</a>
+          <a href="Airport Informations.html" class="dropdown-item">Thông tin sân bay</a>
+          <a href="myflight.html" class="dropdown-item">Chuyến bay của tôi</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Dịch vụ <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="Support Services.html" class="dropdown-item">Dịch vụ hỗ trợ</a>
+          <a href="Special Services.html" class="dropdown-item">Dịch vụ đặc biệt</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="Buy tickets.html">Mua vé <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="Buy tickets.html" class="dropdown-item">Đặt mua</a>
+          <a href="Purchase Instructions.html" class="dropdown-item">Hướng dẫn mua</a>
+          <a href="Payments.html" class="dropdown-item">Thanh toán</a>
+          <a href="Taxes-Fees-Surcharges.html" class="dropdown-item">Thuế - Lệ phí</a>
+          <a href="Taxes-Fees-Surcharges.html" class="dropdown-item">Phụ thu</a>
+        </div>
+      </div>
+    </div>
+  <body>
+ <!-- Main content -->
+<div class="container-mv">
+  <h1>Mua vé</h1>
+
+  <!-- Trip Type Options: One-way and Round-trip -->
+  <div class="trip-type-mv">
+    <input checked="" id="round-trip-mv" name="trip-type-mv" type="radio" />
+    <label for="round-trip-mv">Khứ hồi</label>
+    <input id="one-way-mv" name="trip-type-mv" type="radio" />
+    <label for="one-way-mv">Một chiều</label>
+  </div>
+
+  <div class="form-row-mv">
+    <div class="form-group-mv half-width-mv">
+      <label for="from">Từ</label>
+      <input id="from" list="location-options" placeholder="Điểm đi" type="text" />
+      <datalist id="location-options">
+        <option value="Hà Nội">
+        <option value="TP Hồ Chí Minh">
+        <option value="London">
+        <option value="Paris">
+      </datalist>
+    </div>
+    <div class="form-group-mv half-width">
+      <label for="to">Đến</label>
+      <input id="to" placeholder="Điểm đến" type="text" />
+    </div>
+  </div>
+
+  <div class="form-row-mv">
+    <div class="form-group-mv half-width">
+      <label for="departure-date">Ngày đi</label>
+      <input id="departure-date" placeholder="DD/MM/YYYY" type="date" />
+    </div>
+    <div class="form-group-mv half-width">
+      <label for="return-date">Ngày về</label>
+      <input id="return-date" placeholder="DD/MM/YYYY" type="date" />
+    </div>
+  </div>
+
+  <div class="form-row-mv">
+    <div class="form-group-mv half-width">
+      <label for="passengers">Hành khách</label>
+      <input id="passengers" placeholder="Số lượng hành khách" type="text" />
+    </div>
+    <div class="form-group-mv half-width">
+      <label for="promo-code">MÃ KHUYẾN MẠI</label>
+      <input id="promo-code" placeholder="Nhập mã khuyến mại" type="text" />
+    </div>
+  </div>
+
+  <button class="btn-search-mv">TÌM CHUYẾN BAY</button>
+
+  
+        <div class="payment-methods-mv">
+          <p>Các hình thức thanh toán:</p>
+          <div>
+            <img
+              alt="Visa logo"
+              src="https://storage.googleapis.com/a1aa/image/Ac1SxnhX8RIALRUwS7SdFlbP5HIhWLUD9bvo4Qvl6lqcNreJA.jpg"
+            />
+            <img
+              alt="MasterCard logo"
+              src="https://storage.googleapis.com/a1aa/image/WoS0o6s9vb58HdAxQHHmagMJGfgoRDK4fU1epWi50dyvrZ1nA.jpg"
+            />
+            <img
+            alt="American Ex logo"
+            src="data:image/png;base64,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"
+          />
+          <img
+          alt="JCB logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHn4W-Oi5J_DK-sOmNajCwchEM0S7rZ0nJSA&s"
+        />
+        <img
+        alt="Paypal logo"
+        src="https://rgb.vn/wp-content/uploads/2014/05/rgb_vn_new_branding_paypal_2014_logo_detail.png"
+      />
+      <img
+      alt="Union Pay logo"
+      src="https://www.svgrepo.com/show/328124/unionpay.svg"
+    />
+    <img
+    alt="napas logo"
+    src="data:image/png;base64,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"
+  />
+  <img
+  alt="Vnpay logo"
+  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABHVBMVEX////tHCEAWakAWqnsAAAAV6gAUaUBn9z///35ycz7/f2iuNeVs9VGd7cBntv73Nvr8PbtFRsAU6buRUgASKLtCBAATKTygoLzjYzP2ekAT6UAUaTtExn2+PwBktGMqtABhMcBi83AzeP85+b2qKoBa7YCcroAW7D4u73j8/iTzOszb7X86+rwUlf60NICeb/3srLuJCr89PXuMzf0lJZvlMTS3u3zcXPF5PRJseOp1u/C4/Qtqd5et+J+oMzyY2jwdHbxZWhKS5BRfrlaXJlZhLcdY65eS4tIibxhSYr3oaJdcaddUo7xSEx7RH/izdWuNl10YZTgHi2Cb5zWM0SlNV8oUpmUP2/GKENgjMMAQJ+wxd98wOaExuaj0e5Pi/G6AAASJUlEQVR4nO2di1/aShbHB5JAmCoCGq0U8IkKKipaCyFU227pbne7e/e9vUX//z9jz5nJTGbCQ0SefvK7vYrJAPPlnDnnzOQBIZEiRYoUKVKkSJEiRYoUKVKkSJEiRYoUKVKkAaLbb1b2M8Sedz+mpv3TfD6/aXyk8+7ItLSTt+IgK3/6ShF38nEjzpQ4Lc67M9PQzmZcKvcaEQHQUBBXXx2iakHmqKuZeXdpstItKKz4irJG2ILciq/IUYMoqlnx9NVYcSfRh48ljVeSF3c2rb6Az7Girf1aMO1s9rfg88Zi/eTw8mCq/Rxb/YKMGlFHShr1t44JultExuGAI+bF+rkZQzlXa9Pv8TP1FOBIjmr7gLFYIbZoiMPGoC/jacRPAjAWyy4YIuTBEZR7ImncB4CA6CwS4k6+jwUtK5fLwQ/4z7JGQdxSAQumeX02M4Cn1DsGgck42t0rpZPJdLq0e2TkOOSwydSNCmiep2DTotQJvcW2ZVyUkkxpZITfpQuDIw4ci4ca4A0ha4eHtcVI/D0WtIzdNGCB8fZ2QdySyfQuY+yfNGxyqQEekrNPmBfXF2EshixoxK0L5Cvtlg0chPjPKO+iSdMXFouo/ZbgUk5WAzy4dhYlafRYsFMCvr1yXIYXNirjZba5E++fF2tZFfASAAt+wJl76g+PQasMI69UtnpKcMsql3BPrl8ZXiuEAK8KMqYW1uZahofzIAPkA85PGIEpYXjC2CxbvUmjZg4EhLyYnacVey0IrniRY9tgFHaOMNJcdKwcb2YdAaJhha2oA56QA3VMghXnmPrDpZrVAQuWLb4RA46v9C53WwMQS0Y4adSUKJoFwDUdcJ5W7AkyBoy0o5zALWE2RCHkXoevghu+0YNwU1OAsg4AFkKA84uovXlwNylcFHW0e9QBlzQ6R3vIeaE3FoiprA5YixXCgLBjLhG1t1QrQ6xUYijGGIv9yHV2wZJ7+pjNM0Q1TYCL0lqsx4LMinNA7DNdKqXTHYYW3gEDENIhIKrwzIpqmsiaqf4WZIgzH4s90yWAQB9lD9XNgsnYA0TL31YusaRxUdMqmZSeF0OOWpgt4nbvuqgFJsRtMl7Cw5zVgVTh2xSs6DsxNgXE489aFAVAc4AFWYPZJo0vuXhYnWRyl6WENCfFApVNMEpQjjLkPYHI8mL5+LOj9r+mpY15WzHTwwc4yXQ5zgPqEXJYrBLFbJhkPgnMe2IsImLyDypgIfUU4Gzz4m3vogWkvxJ7AJMmDoEF6u7R0S64ZJojxksK4lclaiJgKpzoezXDiHqb6CVMMyeFrnMTdjAFWixbXCQFooGIBnrw8R+U2jNbqJHU4CAzD8RMpycjdDgZOCmvPPeS6SM/rvBhp1gRKptv6nTJGRFwlitw78ORBilwGOZKyT3cZ0Dcyak7OaLBrGgd/0VN7ObIgDwvzmQylQlPADHQYLrPcTIRd+KsnWpFQEzv6VF0jaTMEQH5fHEm2g4dZmLeyW2HyQH/ZGy7u9JRkxLxjz2Ao/LNFDFv9RBajJANxz2e+sp+IeNbEf3WMr4qgBg7Tp4DiI46o8M22/nBNkRCbkMWWQyGyJOGcfxNSQtjAEJg+jQbQrKdU6woxqHFKxs2DvE3jyy8BUf8FtMBL0cfgxJxVsfeVEQllpZyLHmkeSzliIZE/FMY8OlE3yPzZEaEZF9BDOVDC2a9R0GWZw1zF8nkVyUtFGIHYwHGzMOZLfdvK2kxXNOw/GBoVswd/VEFvDrQl/JHJ0zNChCThgDMldJ84pDmv/UU6FvxszMJwNjV2QwP2UDSEEtrfqiRcwuWAvmyDbciRNGgl4XrM/J9PEA8bDNDybzY4dWMIeeHbHahWPH4mzK/da4PxgV07mYKyCIqX+4t8dVeHIl80clPgdyK6eSflTHorI9twZkDiqSBq70s2WO255HF0Mbi1ysd8GZMwPM5HMUQeRGNaIji2jJEuMHRaWizCee6PrYFz2fPJxERZy+YP1j+NjYUj9X5IADSsS1YnwuhH27QPdl6ooXDzrdiGSsdbdHJWa+P7aI/5gTIEQ123IIPOwut6C/wG/Hjv4QAt5YOUMw0ymkF0bciuqgaRX8sJyAgvrN4CmRTJJ4CdzniN3VJ5nxZAQERcfrUasZfFQuaLwBcnzMgIX/7fIzFtY5oGb8pY9D8ROi4gNdzByQk9dt/jsNW/Ps/VMA7Oj7gQpwCdmL+9jl+zBeAIfcfd/75L+3g0ieqn5y3dICI6Pzj339dTUOa/8+f/vu/gja9RRe9Gw8QJyILco5byswW2GnMpumEZu/mB0LGBFwYC6IGLpyZ9y+y4AJpAKJ5T+t3Tt9dTwMu2GntJ/3WlswtUh/XglcLBtgXEQHPx7Tg1QFdjLNMFfUgvgxwEa+fOdGXsc0tSn6MCRhbWzwLolRExzwkYwNezffUyyE6MXm5nXXwAh//hN9xABckz/dR7e4KMn/h+n6NkMvskNNkltOCTGdrtdoadDB1Pl6WYMfsF9eEqLN6/Wzt5sew85yGAi7UNTN9dXJ1HTPH5WNnQC22BUlP0nimBWvz7v4oevbxaw1w4S2IGhcRT5JaEo2HmM3O8BDoSzXOWMwWUkvhob76TqaGy0wtdKLv0clzK7ZZHqWfjJ5pRfNkuSyIela4md25MpPUM8LNcgI+A3FZAUdFxKuCllYjhRvzct7dfIlGQFxuwBEQlx3wyaSx/IBPhBvzcPkSfa8Gn5KfxSXH16C1WP8itRBbwlKtv+qf+izcZM3zhTv48gKdrIcYC+b15TJNB58UpSd3punwJXE8Xnx+uAAnWUxSONzOLrfOrxzTia3fHx4szl1oJitK6nX7tUSXYXqd5osUKVKkSK9S9fstobehHH2y9Ra1dUJkk60bvc0Zb4IiZP9Nj/bVO39p+/1sub2iNFZfmQbbV25fhvjBdHyZoSPPB3yPmSLfgzahC69u/D24Ulhc3cgndG3mfwbdu/X3voN/v4tb1/3cSLwDweZ8Xrud3f6GeI3Vl1VHdE2uPzhvQ/u2cMKXvYLieV1OGUIHHuwfbA8HL57GjbBymzuyfnufk5sTK+L9T+XG3E/tpb9YbGs8/uKbop+L3mevQ3sOkNDZIuoNrbIxfbpXY20+IYRNdnI9hEZ8871o+yYht1qn/idEbnPyY9nU/NT/PPK/XlzhBldCmuGDs4HRtuT83fmhv+F6NjDsikSwrMCc+R2/6a+A0HgnvXclLz8MQy1lmQ3juffkxTqT6ythN0X7ZPlp9IEv46l6KmNfws7796ey40bOp/momDj3UbwA9d0Rffdj8Lq37DOyTosTmKN8EPbJxvRXe+v4TqoRhpYG+xFaq/DHm01Jw+2gDdN4R4bZ28Dem0Fc4iZMbL+cjyj3dQiFkeus9FyVMGaqJ2z1J0R3w7vU+2LBYn/TUAgTwaB7I83NPhq+jTVO7JBJqH4t/NT5ECbPrtu9hBBeg9MmBxLatCPcj5uGhQ7pkZaMnDb5Kd03/4Zvy7BPJwB+od7KMGKqm++dYGhqhNqtHQYTBqEV4iE4KdJZX04tEVZEFrBhl+T2t/o+mpnQLerXgmynHAFjphVnL+mE6hXXg70UUryIIEiITgq+uSKxV4L32g+NWe63m78mQcckU2JBMQ4eipApMkQYc+SIHUKYEamO2fA9XmqTpxmBbam1iiwG2PjkPhqqAF6k4D6/jlj9s1mIdYStOGGwqJ2VJ9kPI+yIcQi9LmKvYfDZMjkklHozGLPWKSWrzEc7E/xukCAlBpngzI+aCmFBuYJZXpU8EiGMp19ou/y+/4ARKtkv8Ggo6HYS4mOZnD5IN5WXU1+qTsoJTaKclG9uPU3oeymahXxlkRQeFEX6i3eCEsbGG6P7m3k9pPG/XEFKlPf4uQNo57vog09YV6679809hHDf73QCUkBxIy4KGTnmwErBULRXLbVutyb9zSey5+JI2AFDklW2T6jdcpW78BBCHyWHf/3CYbi5jUjbMtb8tJVgc6sRQqU30SXl4BJ6303pd5buZQNBqN6xhJesg/NhxuK1s4ERBYOHbxcqU2JCmxgFpQ3E3BUyYR0E0ZRZhuKMUDmyKQhtVgeIpp+GEXITxhMdBMwkfCe1wWw7okAXFYyvn0HB82XyBwVkSjS/4wIDJwounJM2JPVgNoxtBxHaMCuCmJFPfGQxn00N8356kP4oZom+MoIwbk3hq8AuAzfFT+/GUeOqSkgO1Pu0pAYRZt7njc7pzzd+V1mG6+z7OhW22tCWYIqGiLK5yX9Nlm0HtSm6qRp0QoTqeRdQg//oT0iLlAbRkOeNuFi+kSElp6WEjByGUyAkwfjCOqYWclKNkLxVEv/dkFgayN/h35QpiJhxQx1vmWnaUFmKwQiKuGqNqhOqiZ8d732ScNUy+iuhFi6Z+FQJ2YDy3ZS5rDaV1wnVxB8bgfCWpY18oISsQtXqOrChNRVCWXQ6N6zEKaiXIOuEfIVtdEJWkcX3t6VuRcWqRc1pEx7I5Zp1rNg0Jw0Thm5VNpzQpizda/N1uSiVUFLitAlpcDk2G1va6aBhQnrvjEzI5w3vtOx+uyHcVAEvTplQP/sue6VdJx8m1BL/U4RYw8QT+tGHsgwqwfaiWMWZFmGwIhULL0r1Emrf4zCckNWh8bL+ZnL9Ox+kxKnbUBtcoZOyewlVkw8jtMktLsIkQqV0UU4HT+W6HZ02IbWDPMeOxyjqQ6jcbWc4IYsqm6FDZLZYHo7nZUqkQYSd1peb1uVVy869vocZzLT1JCC/K04S+hFSnb7atAMs8Y3QW9myCAg+DirqgCllfJT4isLw5UmUTT3C2OSDqRMGi0zK7J2ty8Q3wn02pOSRm4ycA+deeFB0mG4cftBQn5751QDU4poV6XfWWhBub4oexjsZ8QKZHMPOh9Y+9/MKIt9Hv0hCK3j+pEXJwduC6YSstWYKhY+/HdybppPlhBlrY1NoQ3zLXOaYb9zQD3Rm8htSmxu/szD08fdg2+9T/crv+sl9QT9Es5YS6rkEm9Yv7684IS2q4jawqVBR7bKdCQlb61um/UXKIy90MRB78Fmkdp9HOB0do0+RIkWK9Mr1+kNjZdrZazKyccndHp6q+u60M15fQntg3sPtjRbVG09fDdetkG5jyFvZjXYfFLdbqfRrTSvNQYVDswF2b6vPKnp06pBdr/rgASH/y5afKjOtX4Z0K1V/E/vFftJuwyXiT/QBjmXTZjPdpr4lpTlZA7tShJ9VohQ3jNDmbW0i33CSqiRZb7quWwVI2qq6/Itv8RFpwL5GhmQeqy1sWq1WbP4bbeFWW+h0sBE6Cn9wy+HOZhE2P1aKFepWXQ4ODdw2bRTtFuwHTNxhM0JsCU/Dt2j5rzZZtdrsV9d7dJMN0m67Dx5Wz3YXHhWT8HbtFk1C77qk5XFQmnZhV8Wrus0qcT23mqwUmw8taME+sEe33bTdplv1uo/trtttEjSsV8UG4KVuy/VapNl1221GmMZ3JOzVHrwWe7UpEULf3QeSJogEPzIefvb4bt1Wq8u8CQcRulCxBIPSfqziRjayHtwKYNj4XHgMlB7x4IluEx4Q9pA0mhiXWGt8n2ISPii2o4jByqs8PiBspQ37q9UpEcJru1V8Z3BYJMSPnnAbulXsD+8RerSbbFdsREFs2AhuBp9HJUn8J0Okwc/HfUBw6L5N2M4GI6x6nlcFWElIsQmMCEKTBAkfJ03YaLLYwgmpJKw00Vwes6Ek9IMGtExmqi63ISMk7VLSa3BCm9mQslgrCf0GzUariei9hI+MsDkNwqLnUtoSXpps0AobCNRr0KLddmF/pZIs0pZnP3RhPovPqFC7eduAwOK2ibAh5H4WBCGc0Mc2aT9S2myxtOHbMANhFAlh9D1UM8kQYcOj1G0ywurDhAnBWp7XJhgdG49gUc/jOQAfVXAffLqu5wEJbYN/gQkr4Gddiu4Gma2LA84tes2mx939ATYX7SJrW4EBbLP0R5PtptclDxW7i/sr0JayHEsxsUAT9dUmDCgylq387++xeULDbRW/6rH5dj8v8vwFP12Mo8z2IpmyhMNfj5n2wTeazV+B8CwonmArD6aa/3sujxT9xUii7rNDvxue23j0wpWM
+  0udGstWoNgeVL3bPg1nLpsPPurYhUz+4Q86jsG3W4PVPRSJFihQpUqRIkSJFihQpUqRIkSJFihQpUqRIkSJFijQf/R8FZggVXa3NhgAAAABJRU5ErkJggg=="
+/>
+<img
+alt="MOMO logo"
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnV4cUM7jBauINof35Yn_unOz976Iz5okV8A&s"
+/>
+<img
+alt="SHOPPEE pay logo"
+src="data:image/png;base64,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"
+/>
+      </div>
+        </div>
+      </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-image: url(images-airplane/site-footer-shape-1.png)">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Liên kết nhanh -->
+          <div class="footer-section">
+            <h3 class="footer-title">Liên kết nhanh</h3>
+            <ul class="footer-list">
+              <li><a href="index.html" class="footer-link">Trang chủ</a></li>
+              <li><a href="#" class="footer-link">Chuyến bay</a></li>
+              <li><a href="Buy tickets.html" class="footer-link">Mua vé</a></li>
+              <li><a href="#" class="footer-link">Thông tin hành trình</a></li>
+              <li><a href="#" class="footer-link">Dịch vụ khách hàng</a></li>
+            </ul>
+          </div>
+
+          <!-- Liên hệ -->
+          <div class="footer-section">
+            <h3 class="footer-title">Liên hệ</h3>
+            <ul class="footer-list">
+              <li>
+                Email:
+                <a href="mailto:support@baae.com" class="footer-link"
+                  >support@qairline.com</a
+                >
+              </li>
+              <li>
+                Điện thoại:
+                <a href="tel:+84912345678" class="footer-link">+84 123456789</a>
+              </li>
+              <li>Địa chỉ: 40 Hàng Bài, Hoàn Kiếm, Hà Nội</li>
+            </ul>
+          </div>
+
+<!-- Chính sách và điều khoản -->
+<div class="footer-section">
+  <h3 class="footer-title">Chính sách</h3>
+  <ul class="footer-list">
+    <li><a href="Privacy Policy.html" class="footer-link">Chính sách bảo mật</a></li>
+    <li><a href="Term of Services.html" class="footer-link">Điều khoản dịch vụ</a></li>
+    <li><a href="Refund Policy.html" class="footer-link">Chính sách hoàn tiền</a></li>
+    <li>
+      <a href="FAQ.html" class="footer-link">FAQ (Câu hỏi thường gặp)</a>
+    </li>
+  </ul>
+</div>
+          <!-- Mạng xã hội -->
+          <div class="footer-section">
+            <h3 class="footer-title">Kết nối với chúng tôi</h3>
+            <div class="social-links">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                class="social-link facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                class="social-link twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="social-link instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="social-link linkedin"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 QAirline. Tất cả quyền lợi được bảo lưu.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
